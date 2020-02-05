@@ -15,7 +15,12 @@ const IndexPage = () => (
       <Image />
     </div>
     <Link to="/page-2/">Go to page 2</Link>
+    <br />
+    <Link to="/page-tutorial-1/">Go to page Tutorial 1</Link>
+    <br />
+    <Link to="/page-tutorial-2/">Go to page Tutorial 2</Link>
+    <br />
+    <Link to="/page-tutorial-3/">Go to page Tutorial 3</Link>
   </Layout>
 )
-
 export default IndexPage
