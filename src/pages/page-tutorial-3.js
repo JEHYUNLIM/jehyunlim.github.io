@@ -15,11 +15,16 @@ const TutorialPageFirst = ({data}) => {
           </h1>
           <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
           {data.allMarkdownRemark.edges.map(({ node }) => (
-            <div key={node.id}>
-              {node.frontmatter.title}{" "}
-              - {node.frontmatter.date}
+            <Link
+              to={node.fields.slug}
+            >
+              <h3>{node.frontmatter.title}{" "}
+                <span>
+                  - {node.frontmatter.date}
+                </span>
+              </h3>
               <p>{node.excerpt}</p>
-            </div>
+            </Link>
           ))}
           <Link to="/">Go back to the homepage</Link>
         </div>
@@ -29,7 +34,7 @@ const TutorialPageFirst = ({data}) => {
 
 export const query = graphql`
   query{
-    allMarkdownRemark {
+    allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC }) {
       totalCount
       edges {
         node {
@@ -37,6 +42,9 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+          }
+          fields {
+            slug
           }
           excerpt
         }
