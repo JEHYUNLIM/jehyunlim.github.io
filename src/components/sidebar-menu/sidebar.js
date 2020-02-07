@@ -3,19 +3,25 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import './sidebar.css';
+import { Link } from "gatsby"
 
 const SidebarItem = ({ label, path, items, depthStep = 10, depth = 0, ...rest }) => {
+  const listItem = (
+    <ListItem
+      button
+      dense
+      {...rest}>
+      <ListItemText style={{ paddingLeft: depth*depthStep }}>
+        <span>{label}</span>
+      </ListItemText>
+    </ListItem>
+  )
+
   return (
     <>
-      <ListItem
-        button
-        dense
-        onClick={ path ? ()=>console.log(path) : ()=>console.log('null') }
-        {...rest}>
-        <ListItemText style={{ paddingLeft: depth*depthStep }}>
-          <span>{label}</span>
-        </ListItemText>
-      </ListItem>
+      <Link to={path} className="text-link">
+        {listItem}
+      </Link>
       {Array.isArray(items) ? (
         <List disablePadding dense>
           {items.map((subItem) => (
