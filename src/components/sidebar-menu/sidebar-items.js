@@ -1,3 +1,6 @@
+import React from "react";
+import { graphql } from "gatsby";
+
 export const sidebarItems = [
   { name: 'home', label: 'HOME', path: '/' },
   { name: 'posts',
@@ -17,3 +20,26 @@ export const sidebarItems = [
     ]
   },
 ]
+/*
+const sidebarComponent = ({data}) => {
+  console.log(data);
+  data.allMarkdownRemark.edges.map(({ node })=> {
+    console.log(node.frontmatter.subject);
+  })
+}
+
+export const query = graphql`
+  query{
+    allMarkdownRemark {
+      edges {
+        node {
+          id
+          frontmatter {
+            subject
+          }
+        }
+      }
+    }
+  }
+`
+*/
