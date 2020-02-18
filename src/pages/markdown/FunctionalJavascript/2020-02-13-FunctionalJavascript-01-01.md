@@ -1,7 +1,7 @@
 ---
-title: "Functional JavaScript Chapter 1"
+title: "Functional JavaScript Chapter 1-01"
 date: "2020-02-13"
-subject: "Functional Javascript"
+subject: "Functional Javascript"  
 ---
 
 Chapter 1 함수형 길들이기
@@ -86,3 +86,13 @@ array; // [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
   }
 ); -> //[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 
+같은 작업이라도 함수형으로 접근하면, 개발자가 각 요소를 올바르게 작동시키는 일에만 신경쓰고 루프 제어는 시스템의 다른 파트에 일임할 수 있다. 이전 코드와 비교하면 루프 카운터를 관리하고 배열 인덱스에 정확하게 접근하는 일은 개발자가 신경쓸 필요가 없어진다. 코드가 길어지면 버그가 날 가능성도 높아지고, 일반 루프는 함수로 추상하지 않는 한 재사용 자체가 안된다. 수동 루프를 완전히 들어내고 함수를 매개변수로 받는 map, reduce, filter 같은 일급 고계함수 higher-order function를 이용해 재사용성, 확장성이 우수한 선언적 코드로 대체한다. 함수로 추상하는 작업이다. 루프를 함수로 추상하면 ES6부터 새로 선보인 람다 표현식 lambda expression이나 화살표 함수 arrow function를 쓸 수 있다. 람다 표현식은 함수 인수로 전달 가능한 익명 함수 anonymous function를 대체할 수 있는 깔끔한 수단이다.
+
+-람다 표기를 일반 함수 표기로 전환-
+function(num) {
+  return Math.pow(num,2);
+}
+위 함수는 다음과 같다.
+num => Math.pow(num,2);
+
+왜 루프를 제거해야 하는가? 루프는 재사용하기도 어렵거니와 다른 연산에 끼워 넣기도 어려운 명령형 제어 구조물이다. 또 루프는 성격상 반복할 때 마다 값이나 상태가 계속 바뀐다. 그러나 함수형 프로그램은 무상태성 statelessness과 불변성 immutability을 지향합니다. 무상태 코드는 전역 상태를 바꾸거나 혼선을 일으킬 가능성이 전혀 없다. 상태를 두지 않으려면 부수효과와 상태 변이를 일으키지 않는 순수함수 pure function을 써야한다.
