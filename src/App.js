@@ -20,8 +20,8 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <Desktop>Desktop</Desktop>
-      <Mobile>Mobile</Mobile>
+      <Desktop>Desktop change</Desktop>
+      <Mobile>Mobile change</Mobile>
     </div>
   );
 }
