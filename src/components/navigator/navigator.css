@@ -1,0 +1,28 @@
+.nav {
+	height: 33px;
+	float:left; 
+	display: inline;
+	padding-left:20px;
+	padding-top:25px;
+}
+
+#top-menu { 
+  width: 850px;
+  position: relative;
+}
+
+#top-menu ul {
+  list-style-type: none;  
+  margin: 0px;            
+  padding: 0px; 
+  font-size:17px; 
+}
+
+#top-menu ul li {
+  height: 33px;
+  float: left;
+  padding-right:15px;
+  padding-left:15px;
+  vertical-align: middle;     
+  text-align: center;
+}
