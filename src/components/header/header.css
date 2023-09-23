@@ -1,0 +1,24 @@
+.header {
+  min-height:100px;
+}
+
+.init-header{
+  height: 100vh;
+  min-height:600px;
+}
+.init-header .header-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.init-header .header-content .title{
+  font-size: 100px;
+}
+
+.main-header{
+  position:fixed; 
+  height:100px;
+}
+.main-header .header-content {
+  z-index: 90000;
+}
